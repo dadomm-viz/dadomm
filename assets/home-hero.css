@@ -32,7 +32,7 @@
 	max-width:380px;
 }
 
-.home-hero-link{ display:block; }
+.home-hero-link{ display:block; text-decoration:none; }
 
 .home-hero-link .label{
 	font-size:20px;
