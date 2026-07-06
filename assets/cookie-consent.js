@@ -38,25 +38,57 @@
 		gtag("config", GA_ID);
 	}
 
+	var STRINGS = {
+		en: {
+			ariaLabel: "Cookie consent",
+			text: 'We use cookies to run this site and, only with your consent, to understand how it is used. See our <a href="/cookies/">Cookie Policy</a> for details.',
+			customize: "Customize",
+			reject: "Reject",
+			accept: "Accept All",
+			essential: "Essential cookies",
+			alwaysActive: "Always active",
+			analytics: "Analytics cookies (Google Analytics)",
+			save: "Save preferences"
+		},
+		es: {
+			ariaLabel: "Consentimiento de cookies",
+			text: 'Usamos cookies para que este sitio funcione y, solo con tu consentimiento, para entender cómo se usa. Consulta nuestra <a href="/es/cookies/">Política de Cookies</a> para más información.',
+			customize: "Personalizar",
+			reject: "Rechazar",
+			accept: "Aceptar todo",
+			essential: "Cookies esenciales",
+			alwaysActive: "Siempre activas",
+			analytics: "Cookies analíticas (Google Analytics)",
+			save: "Guardar preferencias"
+		}
+	};
+
+	function getLang(){
+		var l = (document.documentElement.getAttribute("lang") || "en").slice(0, 2).toLowerCase();
+		return STRINGS[l] ? l : "en";
+	}
+
 	function buildBanner(){
+		var lang = getLang();
+		var t = STRINGS[lang];
 		var el = document.createElement("div");
 		el.id = "cookie-consent-banner";
 		el.setAttribute("role", "dialog");
 		el.setAttribute("aria-live", "polite");
-		el.setAttribute("aria-label", "Cookie consent");
+		el.setAttribute("aria-label", t.ariaLabel);
 		el.innerHTML =
 			'<div class="cc-inner">' +
-				'<p class="cc-text">We use cookies to run this site and, only with your consent, to understand how it is used. See our <a href="/cookies/">Cookie Policy</a> for details.</p>' +
+				'<p class="cc-text">' + t.text + '</p>' +
 				'<div class="cc-actions">' +
-					'<button type="button" class="cc-btn" data-cc="customize">Customize</button>' +
-					'<button type="button" class="cc-btn" data-cc="reject">Reject</button>' +
-					'<button type="button" class="cc-btn" data-cc="accept">Accept All</button>' +
+					'<button type="button" class="cc-btn" data-cc="customize">' + t.customize + '</button>' +
+					'<button type="button" class="cc-btn" data-cc="reject">' + t.reject + '</button>' +
+					'<button type="button" class="cc-btn" data-cc="accept">' + t.accept + '</button>' +
 				'</div>' +
 			'</div>' +
 			'<div class="cc-panel" id="cc-panel">' +
-				'<div class="cc-panel-row"><span>Essential cookies</span><span class="cc-panel-note">Always active</span></div>' +
-				'<div class="cc-panel-row"><label><input type="checkbox" id="cc-analytics-toggle"> Analytics cookies (Google Analytics)</label></div>' +
-				'<div class="cc-panel-actions"><button type="button" class="cc-btn" data-cc="save">Save preferences</button></div>' +
+				'<div class="cc-panel-row"><span>' + t.essential + '</span><span class="cc-panel-note">' + t.alwaysActive + '</span></div>' +
+				'<div class="cc-panel-row"><label><input type="checkbox" id="cc-analytics-toggle"> ' + t.analytics + '</label></div>' +
+				'<div class="cc-panel-actions"><button type="button" class="cc-btn" data-cc="save">' + t.save + '</button></div>' +
 			'</div>';
 		document.body.appendChild(el);
 		return el;
