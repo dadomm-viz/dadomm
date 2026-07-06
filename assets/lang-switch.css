@@ -1,7 +1,0 @@
-/* Language switcher (single toggle showing the language you can switch to) */
-.lang-switch-item{margin-left:14px !important;padding-left:14px;border-left:1px solid rgba(255,255,255,0.25);}
-.lang-switch-item a{opacity:0.85;}
-.lang-switch-item a:hover{opacity:1;}
-@media(max-width:767px){
-  .lang-switch-item{margin-left:8px !important;padding-left:8px;}
-}
