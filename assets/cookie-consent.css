@@ -5,8 +5,9 @@
 #cookie-consent-banner .cc-text{margin:0;flex:1 1 320px;font-family:"Elms Sans",sans-serif;font-size:14px;line-height:1.6;color:#111111;}
 #cookie-consent-banner .cc-text a{color:#111111;text-decoration:underline;}
 #cookie-consent-banner .cc-actions{display:flex;gap:10px;flex-wrap:wrap;flex:0 0 auto;}
-#cookie-consent-banner .cc-btn{background:#111111;color:#FFFFFF;border:none;border-radius:0;padding:13px 26px;font-family:"Elms Sans",sans-serif;font-size:14px;font-weight:400;line-height:1;cursor:pointer;white-space:nowrap;}
-#cookie-consent-banner .cc-btn:hover{opacity:0.82;}
+.cc-btn{background:#111111;color:#FFFFFF;border:none;border-radius:0;padding:13px 26px;font-family:"Elms Sans",sans-serif;font-size:14px;font-weight:400;line-height:1;cursor:pointer;white-space:nowrap;display:inline-block;text-decoration:none;}
+.cc-btn:hover,.cc-btn:focus{opacity:0.82;color:#FFFFFF;}
+.cc-btn:visited{color:#FFFFFF;}
 #cookie-consent-banner .cc-panel{display:none;border-top:1px solid #dddddd;padding:18px 5% 22px;max-width:1400px;margin:0 auto;}
 #cookie-consent-banner .cc-panel.cc-panel-open{display:block;}
 #cookie-consent-banner .cc-panel-row{display:flex;justify-content:space-between;align-items:center;padding:9px 0;font-family:"Elms Sans",sans-serif;font-size:14px;color:#111111;border-bottom:1px solid #eeeeee;}
@@ -16,7 +17,7 @@
 @media(max-width:600px){
   #cookie-consent-banner .cc-inner{flex-direction:column;align-items:stretch;padding:18px 6%;}
   #cookie-consent-banner .cc-actions{flex-direction:column;}
-  #cookie-consent-banner .cc-btn{width:100%;}
+  .cc-btn{width:100%;}
 }
 
 /* Footer "Cookies" link: same appearance as surrounding copyright text */
