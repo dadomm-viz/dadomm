@@ -1,0 +1,58 @@
+/* Home hero (photo + quick links) — uses the site's existing kit color/typography variables */
+.home-hero{
+	width:100%;
+	max-width:1400px;
+	margin:0 auto;
+	display:grid;
+	grid-template-columns:1fr 1fr;
+	align-items:center;
+	gap:40px;
+	padding:56px 5%;
+}
+
+.home-hero-image{
+	justify-self:end;
+	width:100%;
+	max-width:460px;
+}
+
+.home-hero-image img{
+	width:100%;
+	aspect-ratio:1/1;
+	object-fit:cover;
+	display:block;
+}
+
+.home-hero-links{
+	justify-self:start;
+	padding-left:64px;
+	display:flex;
+	flex-direction:column;
+	gap:30px;
+	max-width:380px;
+}
+
+.home-hero-link{ display:block; }
+
+.home-hero-link .label{
+	font-size:20px;
+	color:var(--e-global-color-primary);
+	font-weight:700;
+}
+
+.home-hero-link .desc{
+	display:block;
+	font-size:15px;
+	color:var(--e-global-color-text);
+	margin-top:4px;
+	font-weight:400;
+}
+
+.home-hero-link:hover .label,
+.home-hero-link:hover .desc{ color:var(--e-global-color-secondary); }
+
+@media (max-width: 767px){
+	.home-hero{ grid-template-columns:1fr; padding:40px 5%; }
+	.home-hero-image{ justify-self:center; margin:0 auto 40px; max-width:320px; }
+	.home-hero-links{ justify-self:center; padding-left:0; align-items:center; text-align:center; max-width:100%; }
+}
