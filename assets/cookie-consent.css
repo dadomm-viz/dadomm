@@ -1,0 +1,25 @@
+/* Cookie consent banner */
+#cookie-consent-banner{position:fixed;left:0;right:0;bottom:0;z-index:99999;background:#FFFFFF;display:none;}
+#cookie-consent-banner.cc-visible{display:block;}
+#cookie-consent-banner .cc-inner{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px;padding:22px 5%;max-width:1400px;margin:0 auto;}
+#cookie-consent-banner .cc-text{margin:0;flex:1 1 320px;font-family:"Elms Sans",sans-serif;font-size:14px;line-height:1.6;color:#111111;}
+#cookie-consent-banner .cc-text a{color:#111111;text-decoration:underline;}
+#cookie-consent-banner .cc-actions{display:flex;gap:10px;flex-wrap:wrap;flex:0 0 auto;}
+.cc-btn{background:#111111 !important;color:#FFFFFF !important;border:none !important;border-radius:0 !important;padding:13px 26px;font-family:"Elms Sans",sans-serif;font-size:14px;font-weight:400;line-height:1;cursor:pointer;white-space:nowrap;display:inline-block;text-decoration:none !important;box-shadow:none !important;}
+.cc-btn:hover,.cc-btn:focus{opacity:0.82;color:#FFFFFF !important;}
+.cc-btn:visited{color:#FFFFFF !important;}
+#cookie-consent-banner .cc-panel{display:none;border-top:1px solid #dddddd;padding:18px 5% 22px;max-width:1400px;margin:0 auto;}
+#cookie-consent-banner .cc-panel.cc-panel-open{display:block;}
+#cookie-consent-banner .cc-panel-row{display:flex;justify-content:space-between;align-items:center;padding:9px 0;font-family:"Elms Sans",sans-serif;font-size:14px;color:#111111;border-bottom:1px solid #eeeeee;}
+#cookie-consent-banner .cc-panel-row:last-of-type{border-bottom:none;}
+#cookie-consent-banner .cc-panel-note{color:#777777;font-size:13px;}
+#cookie-consent-banner .cc-panel-actions{margin-top:14px;text-align:right;}
+@media(max-width:600px){
+  #cookie-consent-banner .cc-inner{flex-direction:column;align-items:stretch;padding:18px 6%;}
+  #cookie-consent-banner .cc-actions{flex-direction:column;}
+  .cc-btn{width:100%;}
+}
+
+/* Footer "Cookies" link: same appearance as surrounding copyright text */
+.elementor-352 a.cc-footer-link{color:inherit;font-family:inherit;font-size:inherit;font-weight:inherit;line-height:inherit;letter-spacing:inherit;text-decoration:none;}
+.elementor-352 a.cc-footer-link:hover,.elementor-352 a.cc-footer-link:focus{text-decoration:underline;}
